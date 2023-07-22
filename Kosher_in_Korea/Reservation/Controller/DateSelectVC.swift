@@ -1,17 +1,15 @@
 //
-//  ReservationVC.swift
+//  UserReservationVC.swift
 //  Kosher_in_Korea
 //
-//  Created by 김정원 on 2023/07/22.
+//  Created by 김정원 on 2023/07/13.
 //
 
 import UIKit
+import FSCalendar
 
-class ReservationVC: UIViewController {
+class DateSelectVC: UIViewController {
 
-    @IBAction func dateButtonTapped(_ sender: Any) {
-   goDateSelect(controller: self)
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

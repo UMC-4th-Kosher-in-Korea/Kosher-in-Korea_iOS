@@ -42,3 +42,9 @@ func goSearch(controller : UIViewController) {
        navController.modalPresentationStyle = .fullScreen // 전체 화면으로 모달 표시
     controller.present(navController, animated: true, completion: nil)
 }
+func goDateSelect (controller : UIViewController)
+{
+    let storyboard = UIStoryboard(name: "DateSelect", bundle: nil)
+    let nextVC = storyboard.instantiateViewController(withIdentifier: "DateSelectVC") as! DateSelectVC
+    controller.present(nextVC, animated: true, completion: nil)
+}
