@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50A3DEEE6E47BA03A1BBDA6A /* Pods_Kosher_in_Korea.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2991D35802F9B09918628C /* Pods_Kosher_in_Korea.framework */; };
 		FF3F71B32A603F7A00067530 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3F71B22A603F7A00067530 /* SearchVC.swift */; };
 		FF3F71B82A60409200067530 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF3F71B72A60409200067530 /* Search.storyboard */; };
 		FF3F71BA2A6041BC00067530 /* Reservation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF3F71B92A6041BC00067530 /* Reservation.storyboard */; };
@@ -33,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22B5FDF27EB157D797032779 /* Pods-Kosher_in_Korea.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kosher_in_Korea.debug.xcconfig"; path = "Target Support Files/Pods-Kosher_in_Korea/Pods-Kosher_in_Korea.debug.xcconfig"; sourceTree = "<group>"; };
+		4F2991D35802F9B09918628C /* Pods_Kosher_in_Korea.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kosher_in_Korea.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		518FF1A28463CBCD56ACB3C8 /* Pods-Kosher_in_Korea.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kosher_in_Korea.release.xcconfig"; path = "Target Support Files/Pods-Kosher_in_Korea/Pods-Kosher_in_Korea.release.xcconfig"; sourceTree = "<group>"; };
 		FF3F71B22A603F7A00067530 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		FF3F71B72A60409200067530 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		FF3F71B92A6041BC00067530 /* Reservation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Reservation.storyboard; path = Kosher_in_Korea/Reservation/View/Reservation.storyboard; sourceTree = SOURCE_ROOT; };
@@ -65,12 +69,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50A3DEEE6E47BA03A1BBDA6A /* Pods_Kosher_in_Korea.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56A29AB04BAC57EAABCFDF7A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				22B5FDF27EB157D797032779 /* Pods-Kosher_in_Korea.debug.xcconfig */,
+				518FF1A28463CBCD56ACB3C8 /* Pods-Kosher_in_Korea.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		65119AA8CEA3C59FABE58D45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F2991D35802F9B09918628C /* Pods_Kosher_in_Korea.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FF3F71A52A603E3A00067530 /* UserPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +222,8 @@
 			children = (
 				FF5B32392A6029300030E5FB /* Kosher_in_Korea */,
 				FF5B32382A6029300030E5FB /* Products */,
+				56A29AB04BAC57EAABCFDF7A /* Pods */,
+				65119AA8CEA3C59FABE58D45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -357,9 +382,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF5B324B2A6029310030E5FB /* Build configuration list for PBXNativeTarget "Kosher_in_Korea" */;
 			buildPhases = (
+				1B9C101481B1FB669643D182 /* [CP] Check Pods Manifest.lock */,
 				FF5B32332A6029300030E5FB /* Sources */,
 				FF5B32342A6029300030E5FB /* Frameworks */,
 				FF5B32352A6029300030E5FB /* Resources */,
+				6086CF16A95E6FDE0975CB3D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -421,6 +448,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B9C101481B1FB669643D182 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kosher_in_Korea-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6086CF16A95E6FDE0975CB3D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kosher_in_Korea/Pods-Kosher_in_Korea-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kosher_in_Korea/Pods-Kosher_in_Korea-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kosher_in_Korea/Pods-Kosher_in_Korea-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FF5B32332A6029300030E5FB /* Sources */ = {
@@ -582,6 +651,7 @@
 		};
 		FF5B324C2A6029310030E5FB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22B5FDF27EB157D797032779 /* Pods-Kosher_in_Korea.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -610,6 +680,7 @@
 		};
 		FF5B324D2A6029310030E5FB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 518FF1A28463CBCD56ACB3C8 /* Pods-Kosher_in_Korea.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

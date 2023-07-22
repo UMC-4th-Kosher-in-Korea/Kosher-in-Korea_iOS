@@ -1,0 +1,6 @@
+framework module Pods_Kosher_in_Korea {
+  umbrella header "Pods-Kosher_in_Korea-umbrella.h"
+
+  export *
+  module * { export * }
+}
