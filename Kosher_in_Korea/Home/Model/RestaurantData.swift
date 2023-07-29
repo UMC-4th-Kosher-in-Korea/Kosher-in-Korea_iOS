@@ -14,8 +14,7 @@ struct BannerInfo: Hashable {
 }
 extension BannerInfo {
     static let list = [
-        BannerInfo(title: "서울 식당", description: "용산구에 위치함", imageName: "eevee"),
-        BannerInfo(title: "부산 식당", description: "남포동에 위치함", imageName: "oddish"),
-        
+        BannerInfo(title: "서울 식당", description: "용산구에 위치함", imageName: "Elifood"),
+       
     ]
 }

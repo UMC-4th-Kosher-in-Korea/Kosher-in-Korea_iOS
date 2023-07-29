@@ -9,23 +9,25 @@ import UIKit
 
 class HomeVC: UIViewController {
 
-    @IBOutlet weak var pageControl: UIPageControl!
+
     @IBOutlet weak var collectionView: UICollectionView!
-    
     @IBAction func addressButtonTapped(_ sender: Any) {
         goAddressSearch(controller: self)
     }
     
-    //let list : [BannerInfo] = BannerInfo.list
+    @IBAction func segmentControl(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 1 {
+            sender.selectedSegmentIndex = 0
+            goProducts(controller: self)
+        }
+    }
+    let list : [BannerInfo] = BannerInfo.list
     let bannerInfos : [BannerInfo] = BannerInfo.list
     typealias Item = BannerInfo
     var datasoucre : UICollectionViewDiffableDataSource<Section , Item>!
+    
     enum Section {
         case main
-    }
-    @IBAction func selectLocalTapped(_ sender: Any) {
-       goAddressSearch(controller: self)
-        
     }
     
     override func viewDidLoad() {
@@ -38,7 +40,6 @@ class HomeVC: UIViewController {
                 return UICollectionViewCell()
             }
             cell.configure(item)
-            //cell.backgroundColor = self.colors[indexPath.item]
             return cell
         })
         
@@ -51,9 +52,7 @@ class HomeVC: UIViewController {
         // layout : compositional layout
         
         collectionView.collectionViewLayout = layout()
-        pageControl.numberOfPages = bannerInfos.count
         collectionView.alwaysBounceVertical = false
-
     }
 }
 
