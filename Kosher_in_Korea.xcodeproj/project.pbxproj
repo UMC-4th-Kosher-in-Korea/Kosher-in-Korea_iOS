@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		50A3DEEE6E47BA03A1BBDA6A /* Pods_Kosher_in_Korea.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2991D35802F9B09918628C /* Pods_Kosher_in_Korea.framework */; };
+		7374D27B2A7BF65200D22D37 /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = 7374D27A2A7BF65200D22D37 /* FacebookAEM */; };
+		7374D27D2A7BF65200D22D37 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = 7374D27C2A7BF65200D22D37 /* FacebookBasics */; };
+		7374D27F2A7BF65200D22D37 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7374D27E2A7BF65200D22D37 /* FacebookCore */; };
+		7374D2812A7BF65200D22D37 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 7374D2802A7BF65200D22D37 /* FacebookLogin */; };
+		7374D2832A7BF65200D22D37 /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 7374D2822A7BF65200D22D37 /* FacebookShare */; };
+		7374D2862A7BF66700D22D37 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 7374D2852A7BF66700D22D37 /* GoogleSignIn */; };
+		7374D2882A7BF66700D22D37 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7374D2872A7BF66700D22D37 /* GoogleSignInSwift */; };
+		7374D28A2A7BF6F100D22D37 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7374D2892A7BF6F100D22D37 /* Login.storyboard */; };
 		FF23A51B2A752AF200364FC4 /* ProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF23A51A2A752AF200364FC4 /* ProductsVC.swift */; };
 		FF3F71B32A603F7A00067530 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3F71B22A603F7A00067530 /* SearchVC.swift */; };
 		FF3F71B82A60409200067530 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF3F71B72A60409200067530 /* Search.storyboard */; };
@@ -33,7 +41,7 @@
 		FF5B84FB2A756D330023818F /* ProductData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B84FA2A756D330023818F /* ProductData.swift */; };
 		FF7845792A666A9300E2A663 /* RestaurantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7845782A666A9300E2A663 /* RestaurantData.swift */; };
 		FF78457B2A666B9900E2A663 /* RestaurantViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF78457A2A666B9900E2A663 /* RestaurantViewCell.swift */; };
-		FF93DE992A655984002E952D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF93DE982A655984002E952D /* Login.storyboard */; };
+		FF93DE992A655984002E952D /* Login1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF93DE982A655984002E952D /* Login1.storyboard */; };
 		FF93DE9B2A65599B002E952D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF93DE9A2A65599B002E952D /* LoginVC.swift */; };
 		FFB6721C2A6A959800A1269B /* HomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB6721B2A6A959800A1269B /* HomeData.swift */; };
 		FFD5E5F32A6BE37A00C95FEE /* ReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD5E5F22A6BE37A00C95FEE /* ReservationVC.swift */; };
@@ -44,6 +52,7 @@
 		22B5FDF27EB157D797032779 /* Pods-Kosher_in_Korea.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kosher_in_Korea.debug.xcconfig"; path = "Target Support Files/Pods-Kosher_in_Korea/Pods-Kosher_in_Korea.debug.xcconfig"; sourceTree = "<group>"; };
 		4F2991D35802F9B09918628C /* Pods_Kosher_in_Korea.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kosher_in_Korea.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		518FF1A28463CBCD56ACB3C8 /* Pods-Kosher_in_Korea.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kosher_in_Korea.release.xcconfig"; path = "Target Support Files/Pods-Kosher_in_Korea/Pods-Kosher_in_Korea.release.xcconfig"; sourceTree = "<group>"; };
+		7374D2892A7BF6F100D22D37 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		FF23A51A2A752AF200364FC4 /* ProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsVC.swift; sourceTree = "<group>"; };
 		FF3F71B22A603F7A00067530 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		FF3F71B72A60409200067530 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -71,7 +80,7 @@
 		FF5B84FA2A756D330023818F /* ProductData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductData.swift; sourceTree = "<group>"; };
 		FF7845782A666A9300E2A663 /* RestaurantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantData.swift; sourceTree = "<group>"; };
 		FF78457A2A666B9900E2A663 /* RestaurantViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewCell.swift; sourceTree = "<group>"; };
-		FF93DE982A655984002E952D /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		FF93DE982A655984002E952D /* Login1.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login1.storyboard; sourceTree = "<group>"; };
 		FF93DE9A2A65599B002E952D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		FFB6721B2A6A959800A1269B /* HomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeData.swift; sourceTree = "<group>"; };
 		FFD5E5F22A6BE37A00C95FEE /* ReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationVC.swift; sourceTree = "<group>"; };
@@ -83,7 +92,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7374D2812A7BF65200D22D37 /* FacebookLogin in Frameworks */,
+				7374D27D2A7BF65200D22D37 /* FacebookBasics in Frameworks */,
+				7374D2832A7BF65200D22D37 /* FacebookShare in Frameworks */,
+				7374D2882A7BF66700D22D37 /* GoogleSignInSwift in Frameworks */,
+				7374D27B2A7BF65200D22D37 /* FacebookAEM in Frameworks */,
 				50A3DEEE6E47BA03A1BBDA6A /* Pods_Kosher_in_Korea.framework in Frameworks */,
+				7374D27F2A7BF65200D22D37 /* FacebookCore in Frameworks */,
+				7374D2862A7BF66700D22D37 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,7 +399,8 @@
 		FF93DE962A655973002E952D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FF93DE982A655984002E952D /* Login.storyboard */,
+				7374D2892A7BF6F100D22D37 /* Login.storyboard */,
+				FF93DE982A655984002E952D /* Login1.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -413,6 +430,15 @@
 			dependencies = (
 			);
 			name = Kosher_in_Korea;
+			packageProductDependencies = (
+				7374D27A2A7BF65200D22D37 /* FacebookAEM */,
+				7374D27C2A7BF65200D22D37 /* FacebookBasics */,
+				7374D27E2A7BF65200D22D37 /* FacebookCore */,
+				7374D2802A7BF65200D22D37 /* FacebookLogin */,
+				7374D2822A7BF65200D22D37 /* FacebookShare */,
+				7374D2852A7BF66700D22D37 /* GoogleSignIn */,
+				7374D2872A7BF66700D22D37 /* GoogleSignInSwift */,
+			);
 			productName = Kosher_in_Korea;
 			productReference = FF5B32372A6029300030E5FB /* Kosher_in_Korea.app */;
 			productType = "com.apple.product-type.application";
@@ -441,6 +467,10 @@
 				Base,
 			);
 			mainGroup = FF5B322E2A6029300030E5FB;
+			packageReferences = (
+				7374D2792A7BF65200D22D37 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				7374D2842A7BF66700D22D37 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			productRefGroup = FF5B32382A6029300030E5FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -459,10 +489,11 @@
 				FFD5E5F52A6BE38F00C95FEE /* Reservation.storyboard in Resources */,
 				FF5B32472A6029310030E5FB /* LaunchScreen.storyboard in Resources */,
 				FF3F71CC2A60604400067530 /* AddressSearch.storyboard in Resources */,
-				FF93DE992A655984002E952D /* Login.storyboard in Resources */,
+				FF93DE992A655984002E952D /* Login1.storyboard in Resources */,
 				FF5B84F52A755D120023818F /* Products.storyboard in Resources */,
 				FF5B32442A6029310030E5FB /* Assets.xcassets in Resources */,
 				FF3F71B82A60409200067530 /* Search.storyboard in Resources */,
+				7374D28A2A7BF6F100D22D37 /* Login.storyboard in Resources */,
 				FF5B32422A6029300030E5FB /* Main.storyboard in Resources */,
 				FF3F71BA2A6041BC00067530 /* DateSelect.storyboard in Resources */,
 				FF57933D2A611C3200FA65D5 /* Order.storyboard in Resources */,
@@ -756,6 +787,63 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7374D2792A7BF65200D22D37 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.0;
+			};
+		};
+		7374D2842A7BF66700D22D37 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7374D27A2A7BF65200D22D37 /* FacebookAEM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7374D2792A7BF65200D22D37 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookAEM;
+		};
+		7374D27C2A7BF65200D22D37 /* FacebookBasics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7374D2792A7BF65200D22D37 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookBasics;
+		};
+		7374D27E2A7BF65200D22D37 /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7374D2792A7BF65200D22D37 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
+		};
+		7374D2802A7BF65200D22D37 /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7374D2792A7BF65200D22D37 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+		7374D2822A7BF65200D22D37 /* FacebookShare */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7374D2792A7BF65200D22D37 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookShare;
+		};
+		7374D2852A7BF66700D22D37 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7374D2842A7BF66700D22D37 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		7374D2872A7BF66700D22D37 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7374D2842A7BF66700D22D37 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FF5B322F2A6029300030E5FB /* Project object */;
 }
