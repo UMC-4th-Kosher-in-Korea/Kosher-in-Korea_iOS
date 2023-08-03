@@ -205,7 +205,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d09-3c-hVB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-573" y="499"/>
+            <point key="canvasLocation" x="-576" y="458"/>
         </scene>
         <!--ReservationVC-->
         <scene sceneID="rO1-pU-sc8">
@@ -225,12 +225,11 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Fl-PY-fyL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="361" y="452"/>
+            <point key="canvasLocation" x="176" y="458"/>
         </scene>
         <!--홈-->
         <scene sceneID="I06-cP-6CP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lrd-xB-4uZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" toolbarHidden="NO" id="nPu-1k-KWv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="홈" image="homekit" catalog="system" id="iqd-O5-eR9" userLabel="홈"/>
                     <toolbarItems/>
@@ -246,6 +245,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="JV8-NE-LWL"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lrd-xB-4uZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="854.19847328244271" y="4.9295774647887329"/>
         </scene>

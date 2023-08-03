@@ -39,7 +39,7 @@ class ProductHomeVC: UIViewController, UICollectionViewDelegate {
         
                 // layout : compositional layout
         
-                collectionView.collectionViewLayout = layout()
+                collectionView.collectionViewLayout = itemLayout()
                 collectionView.alwaysBounceVertical = false
                 
     }

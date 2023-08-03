@@ -15,6 +15,9 @@ struct ProductInfo: Hashable {
 extension ProductInfo {
     static let list = [
         ProductInfo(name: "Salad Topper", price: "15,800 KRW", imageName: "saladTopper"),
+        ProductInfo(name: "Salad", price: "25,800 KRW", imageName: "tahini"),
+
+        
        
     ]
 }
