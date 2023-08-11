@@ -8,56 +8,30 @@
 import UIKit
 
 class HomeVC: UIViewController {
-
-
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBAction func addressButtonTapped(_ sender: Any) {
-        goAddressSearch(controller: self)
-    }
     
-    @IBAction func segmentControl(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 1 {
-            sender.selectedSegmentIndex = 0
-            goProducts(controller: self)
+    
+    @IBOutlet weak var selectProductView: UIView!
+    @IBOutlet weak var restaurantView: UIView!
+    @IBAction func segment(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0 :
+            restaurantView.isHidden = false
+            selectProductView.isHidden = true
+        case 1 :
+            restaurantView.isHidden = true
+            selectProductView.isHidden = false
+        default:
+            break
         }
     }
-    let list : [BannerInfo] = BannerInfo.list
-    let bannerInfos : [BannerInfo] = BannerInfo.list
-    typealias Item = BannerInfo
-    var datasoucre : UICollectionViewDiffableDataSource<Section , Item>!
-    
-    enum Section {
-        case main
-    }
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // presentation diffable datasource
-        collectionView.delegate = self
-        datasoucre = UICollectionViewDiffableDataSource<Section, Item> (collectionView: collectionView, cellProvider: {collectionView, indexPath, item in
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RestaurantViewCell", for: indexPath)
-                    as? RestaurantViewCell else {
-                return UICollectionViewCell()
-            }
-            cell.configure(item)
-            return cell
-        })
+        selectProductView.isHidden = true
         
-        // data : snapshot
-        var snapshot = NSDiffableDataSourceSnapshot<Section,Item> ()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(bannerInfos,toSection: .main)
-        datasoucre.apply(snapshot)
-        
-        // layout : compositional layout
-        
-        collectionView.collectionViewLayout = layout()
-        collectionView.alwaysBounceVertical = false
     }
-}
-
-extension HomeVC : UICollectionViewDelegate{
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        goReservation(controller: self)
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 }

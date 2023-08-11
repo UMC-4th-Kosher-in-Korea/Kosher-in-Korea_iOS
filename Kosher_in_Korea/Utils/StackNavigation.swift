@@ -7,28 +7,31 @@
 
 import UIKit
 func goHome(controller : UIViewController) {
-//    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//    let HomeVC = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
-//    HomeVC.modalPresentationStyle = .currentContext
-//    controller.present(HomeVC, animated: false, completion: nil)
-    controller.navigationController?.popToRootViewController(animated: false)
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let nextVC = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+    if let navigationController = controller.navigationController {
+            navigationController.pushViewController(nextVC, animated: true)
+        }
+}
+func goPayment(controller : UIViewController) {
+    let storyboard = UIStoryboard(name: "Payment", bundle: nil)
+    if let paymentVC = storyboard.instantiateViewController(withIdentifier: "PaymentVC") as? PaymentVC {
+        paymentVC.productDelegate = controller as? ProductDelegate
+        controller.navigationController?.pushViewController(paymentVC, animated: true)
+    } else { }
+}
 
-}
-func goProducts(controller : UIViewController) {
-    let storyboard = UIStoryboard(name: "Products", bundle: nil)
-    let productsVC = storyboard.instantiateViewController(withIdentifier: "ProductsVC") as! ProductsVC
-    controller.navigationController?.pushViewController(productsVC, animated: false)
-}
+
 func goReservation(controller : UIViewController) {
 
-//    let storyboard = UIStoryboard(name: "Reservation", bundle: nil)
-//       let nextVC = storyboard.instantiateViewController(withIdentifier: "ReservationVC") as! ReservationVC
-//       let navController = UINavigationController(rootViewController: nextVC) // 네비게이션 컨트롤러로 감싸기
-//    navController.modalPresentationStyle = .fullScreen // 전체 화면으로 모달 표시
-//    controller.present(navController, animated: true, completion: nil)
     let storyboard = UIStoryboard(name: "Reservation", bundle: nil)
-    let productsVC = storyboard.instantiateViewController(withIdentifier: "ReservationVC") as! ReservationVC
-    controller.navigationController?.pushViewController(productsVC, animated: false)
+       let nextVC = storyboard.instantiateViewController(withIdentifier: "ReservationVC") as! ReservationVC
+       let navController = UINavigationController(rootViewController: nextVC) // 네비게이션 컨트롤러로 감싸기
+    navController.modalPresentationStyle = .fullScreen // 전체 화면으로 모달 표시
+    controller.present(navController, animated: true, completion: nil)
+//    let storyboard = UIStoryboard(name: "Reservation", bundle: nil)
+//    let productsVC = storyboard.instantiateViewController(withIdentifier: "ReservationVC") as! ReservationVC
+//    controller.navigationController?.pushViewController(productsVC, animated: false)
 }
 
 func goAddressSearch (controller : UIViewController)
