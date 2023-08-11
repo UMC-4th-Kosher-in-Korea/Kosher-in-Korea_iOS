@@ -10,6 +10,10 @@ protocol CartDelegate: AnyObject {
     func addProductToCart(product: Product)
 }
 
+protocol RestaurantSelectionDelegate: AnyObject {
+    func didSelectRestaurant(with id: Int)
+}
+
 struct Product : Hashable {
     let name : String
     let imageName : String
