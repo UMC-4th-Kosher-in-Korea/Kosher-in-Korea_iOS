@@ -15,6 +15,8 @@
 		7374D2832A7BF65200D22D37 /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 7374D2822A7BF65200D22D37 /* FacebookShare */; };
 		7374D2862A7BF66700D22D37 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 7374D2852A7BF66700D22D37 /* GoogleSignIn */; };
 		7374D2882A7BF66700D22D37 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7374D2872A7BF66700D22D37 /* GoogleSignInSwift */; };
+		D56355352A86A24600BF62B7 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56355342A86A24600BF62B7 /* AccountVC.swift */; };
+		D5F355C62A8A163700BA70F7 /* FinalReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F355C52A8A163700BA70F7 /* FinalReservationVC.swift */; };
 		FF390B1C2A80B7C30011D973 /* RestaurantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF390B1B2A80B7C30011D973 /* RestaurantVC.swift */; };
 		FF390B1E2A80CC590011D973 /* SelectionOptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF390B1D2A80CC590011D973 /* SelectionOptionVC.swift */; };
 		FF390B202A80F2E60011D973 /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF390B1F2A80F2E60011D973 /* Payment.storyboard */; };
@@ -56,6 +58,8 @@
 		22B5FDF27EB157D797032779 /* Pods-Kosher_in_Korea.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kosher_in_Korea.debug.xcconfig"; path = "Target Support Files/Pods-Kosher_in_Korea/Pods-Kosher_in_Korea.debug.xcconfig"; sourceTree = "<group>"; };
 		4F2991D35802F9B09918628C /* Pods_Kosher_in_Korea.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kosher_in_Korea.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		518FF1A28463CBCD56ACB3C8 /* Pods-Kosher_in_Korea.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kosher_in_Korea.release.xcconfig"; path = "Target Support Files/Pods-Kosher_in_Korea/Pods-Kosher_in_Korea.release.xcconfig"; sourceTree = "<group>"; };
+		D56355342A86A24600BF62B7 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AccountVC.swift; path = "../../../../Hanyang ERICA/Kosher-in-Korea_iOS/Kosher_in_Korea/Home/Controller/AccountVC.swift"; sourceTree = "<group>"; };
+		D5F355C52A8A163700BA70F7 /* FinalReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalReservationVC.swift; sourceTree = "<group>"; };
 		FF390B1B2A80B7C30011D973 /* RestaurantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantVC.swift; sourceTree = "<group>"; };
 		FF390B1D2A80CC590011D973 /* SelectionOptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionOptionVC.swift; sourceTree = "<group>"; };
 		FF390B1F2A80F2E60011D973 /* Payment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Payment.storyboard; sourceTree = "<group>"; };
@@ -242,6 +246,8 @@
 				FFD5E5F22A6BE37A00C95FEE /* ReservationVC.swift */,
 				FF5B32542A602A8C0030E5FB /* DateSelectVC.swift */,
 				FF3F71B22A603F7A00067530 /* SearchVC.swift */,
+				D56355342A86A24600BF62B7 /* AccountVC.swift */,
+				D5F355C52A8A163700BA70F7 /* FinalReservationVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -410,6 +416,7 @@
 				FF390B2F2A81583A0011D973 /* MyCartCell.swift in Sources */,
 				FF390B2B2A8122400011D973 /* ProductDelegate.swift in Sources */,
 				FF5B323B2A6029300030E5FB /* AppDelegate.swift in Sources */,
+				D5F355C62A8A163700BA70F7 /* FinalReservationVC.swift in Sources */,
 				FFD5E5F32A6BE37A00C95FEE /* ReservationVC.swift in Sources */,
 				FF390B1E2A80CC590011D973 /* SelectionOptionVC.swift in Sources */,
 				FFB6721C2A6A959800A1269B /* HomeData.swift in Sources */,
@@ -431,6 +438,7 @@
 				FF5B84F92A756D150023818F /* ProductCell.swift in Sources */,
 				FF8408C52A86765300216CDE /* ProductOrderVC.swift in Sources */,
 				FF390B222A80F2F30011D973 /* PaymentVC.swift in Sources */,
+				D56355352A86A24600BF62B7 /* AccountVC.swift in Sources */,
 				FF3F71CE2A60605300067530 /* AddressSearchVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

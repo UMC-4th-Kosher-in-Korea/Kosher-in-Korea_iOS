@@ -1,3 +1,16 @@
+//
+//  ViewController.swift
+//  test
+//
+//  Created by 최영우 on 8/6/23.
+//
+
+//
+//  RestauInfo.swift
+//  test
+//
+//  Created by 최영우 on 8/7/23.
+//
 
 import Foundation
 import UIKit
@@ -15,10 +28,9 @@ class RestaurantDetailsVC : UIViewController, UITableViewDelegate, UITableViewDa
     private var BackButton : UIButton = {
         var button = UIButton()
         button.setTitle("<-", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.setTitleColor(.gray, for: .highlighted)
+        button.setTitleColor(.gray, for: .normal)
+        button.setTitleColor(.systemGray4, for: .highlighted)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .systemGray
         return button
     }()
     
@@ -71,7 +83,11 @@ class RestaurantDetailsVC : UIViewController, UITableViewDelegate, UITableViewDa
         button.setTitleColor(.black, for: .normal)
         button.setTitleColor(.gray, for: .highlighted)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .systemGray
+        
+        button.layer.cornerRadius = 8
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.systemGray5.cgColor
+        
         return button
     }()
     
@@ -81,7 +97,11 @@ class RestaurantDetailsVC : UIViewController, UITableViewDelegate, UITableViewDa
         button.setTitleColor(.black, for: .normal)
         button.setTitleColor(.gray, for: .highlighted)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .systemGray
+        
+        button.layer.cornerRadius = 8
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.systemGray5.cgColor
+        
         return button
     }()
     
@@ -98,7 +118,11 @@ class RestaurantDetailsVC : UIViewController, UITableViewDelegate, UITableViewDa
         ResButton.setTitle("Today (Friday) / Two / 2:00 PM", for: .normal)
         ResButton.setTitleColor(.black, for: .normal)
         ResButton.setTitleColor(.gray, for: .highlighted)
-        ResButton.backgroundColor = .systemGray
+        
+        ResButton.layer.cornerRadius = 8
+        ResButton.layer.borderWidth = 1
+        ResButton.layer.borderColor = UIColor.systemGray5.cgColor
+        
         ResButton.translatesAutoresizingMaskIntoConstraints = false
         
         ResButton.addTarget(self, action: #selector(goResVC), for: .touchUpInside)
@@ -149,6 +173,11 @@ class RestaurantDetailsVC : UIViewController, UITableViewDelegate, UITableViewDa
         button.setTitleColor(.systemGray, for: .highlighted)
         button.backgroundColor = .systemOrange
         button.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        button.layer.cornerRadius = 8
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.systemOrange.cgColor
         
         return button
     }()
@@ -223,19 +252,26 @@ class RestaurantDetailsVC : UIViewController, UITableViewDelegate, UITableViewDa
             StoreInfo.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20)
         ])
         NSLayoutConstraint.activate([
+            CallButton.widthAnchor.constraint(equalToConstant: 150),
+            CallButton.heightAnchor.constraint(equalToConstant: 50),
             CallButton.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 260),
-            CallButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 80)
+            CallButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20)
         ])
         
         NSLayoutConstraint.activate([
+            LocationButton.widthAnchor.constraint(equalToConstant: 150),
+            LocationButton.heightAnchor.constraint(equalToConstant: 50),
             LocationButton.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 260),
-            LocationButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 250)
+            LocationButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 210)
         ])
         NSLayoutConstraint.activate([
+            
             ReservationLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 330),
             ReservationLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20)
         ])
         NSLayoutConstraint.activate([
+            ResButton.widthAnchor.constraint(equalToConstant: 360),
+            ResButton.heightAnchor.constraint(equalToConstant: 50),
             ResButton.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 370),
             ResButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor)
         ])
@@ -269,6 +305,8 @@ class RestaurantDetailsVC : UIViewController, UITableViewDelegate, UITableViewDa
         menuTableView.register(UITableViewCell.self, forCellReuseIdentifier: "menuTableViewCell")
         
         NSLayoutConstraint.activate([
+            FinalReservationButton.widthAnchor.constraint(equalToConstant: 360),
+            FinalReservationButton.heightAnchor.constraint(equalToConstant: 50),
             FinalReservationButton.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 1700),
             FinalReservationButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             FinalReservationButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -30)
