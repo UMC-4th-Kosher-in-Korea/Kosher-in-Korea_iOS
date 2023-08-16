@@ -6,12 +6,17 @@
 //
 
 import UIKit
+
 func goHome(controller : UIViewController) {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let nextVC = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
-    if let navigationController = controller.navigationController {
-            navigationController.pushViewController(nextVC, animated: true)
+        guard let vc = storyboard.instantiateViewController(identifier: "HomeVC") as? HomeVC else { return }
+        controller.navigationController?.pushViewController(vc, animated: true)
+    if let tabBarController = controller.tabBarController {
+            tabBarController.selectedIndex = 0
         }
+    
+    
+    
 }
 func goPayment(controller : UIViewController) {
     let storyboard = UIStoryboard(name: "Payment", bundle: nil)

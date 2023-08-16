@@ -60,7 +60,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
+    
+    func setRootToTabBarController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let tabBarController = storyboard.instantiateViewController(withIdentifier: "HomeTabBar") as? UITabBarController {
+            self.window?.rootViewController = tabBarController
+            self.window?.makeKeyAndVisible()
+        }
+    }
+    func setRootToLoginController() {
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        if let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC {
+            self.window?.rootViewController = loginViewController
+            self.window?.makeKeyAndVisible()
+        }
+    }
 }
 

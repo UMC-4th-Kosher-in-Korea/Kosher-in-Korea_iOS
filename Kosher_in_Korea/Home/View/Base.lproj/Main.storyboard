@@ -24,12 +24,15 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iud-R5-L2i">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="70"/>
                                         <subviews>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2oo-lr-Z4n">
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2oo-lr-Z4n">
                                                 <rect key="frame" x="98.333333333333329" y="14" width="196.33333333333337" height="43"/>
+                                                <color key="backgroundColor" red="0.41071957349999999" green="0.62533271310000005" blue="0.99783438440000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <segments>
                                                     <segment title="Restaurant"/>
                                                     <segment title="Products"/>
                                                 </segments>
+                                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="segment:" destination="BYZ-38-t0r" eventType="valueChanged" id="g4Q-i4-9d6"/>
                                                 </connections>
@@ -55,7 +58,7 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.21960784310000001" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" systemColor="tintColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="qoN-Ee-Grh" secondAttribute="trailing" constant="3" id="0KR-qt-xKO"/>
                                             <constraint firstItem="qoN-Ee-Grh" firstAttribute="width" secondItem="2oo-lr-Z4n" secondAttribute="width" multiplier="0.4" id="4yR-Ct-LSV"/>
@@ -120,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="2134" y="-987"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Home Tab Bar-->
         <scene sceneID="RPn-dJ-bOD">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="k2K-gy-cYW" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="HomeTabBar" automaticallyAdjustsScrollViewInsets="NO" id="k2K-gy-cYW" customClass="HomeTabBar" customModule="Kosher_in_Korea" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sK5-an-9IV">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="49"/>
@@ -271,7 +274,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="21r-j7-8Rg">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="21r-j7-8Rg" customClass="MyOrderCell" customModule="Kosher_in_Korea" customModuleProvider="target">
                                                 <rect key="frame" x="43" y="0.0" width="307" height="218"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WXc-jo-38G">
@@ -376,6 +379,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="collectionView" destination="ZoU-0R-jd8" id="rWQ-j7-A5p"/>
                         <outlet property="containerVW" destination="9wq-H1-2Rs" id="ZkV-uA-oCx"/>
                     </connections>
                 </viewController>
@@ -383,13 +387,24 @@
             </objects>
             <point key="canvasLocation" x="2133.5877862595421" y="412.67605633802822"/>
         </scene>
-        <!--View Controller-->
+        <!--User PageVC-->
         <scene sceneID="PzH-eT-DnT">
             <objects>
-                <viewController id="EzB-gM-z17" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserPageVC" id="EzB-gM-z17" customClass="UserPageVC" customModule="Kosher_in_Korea" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MeY-BG-3uJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZF8-Gv-JOd">
+                                <rect key="frame" x="155" y="360" width="83" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="로그아웃"/>
+                                <connections>
+                                    <action selector="logoutBtn:" destination="EzB-gM-z17" eventType="touchUpInside" id="Ngq-23-Wuk"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="RFr-2c-Vhh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -426,6 +441,44 @@
                                     </searchBar>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ig-jg-kCh">
                                         <rect key="frame" x="0.0" y="60" width="393" height="606"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hpl-1B-Tcu">
+                                                <rect key="frame" x="125" y="142" width="97" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6i3-Ch-MVG">
+                                                <rect key="frame" x="125" y="197" width="97" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j2u-Rc-B0O">
+                                                <rect key="frame" x="125" y="259" width="97" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XT4-0g-8o4">
+                                                <rect key="frame" x="136" y="315" width="75" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="d:" destination="pUO-aX-Sbz" eventType="touchUpInside" id="VKx-Bs-K9W"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBP-8Z-gWM">
+                                                <rect key="frame" x="136" y="358" width="75" height="59"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="e:" destination="pUO-aX-Sbz" eventType="touchUpInside" id="QY5-Oq-f1v"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
@@ -441,10 +494,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Browse" id="Nng-k0-HRh"/>
+                    <connections>
+                        <outlet property="a" destination="hpl-1B-Tcu" id="syv-vd-llY"/>
+                        <outlet property="b" destination="6i3-Ch-MVG" id="uMG-fw-OCz"/>
+                        <outlet property="c" destination="j2u-Rc-B0O" id="PUR-2x-S9a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hih-dl-mIh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2134" y="-247"/>
+            <point key="canvasLocation" x="2133.5877862595421" y="-247.18309859154931"/>
         </scene>
         <!--RestaurantVC-->
         <scene sceneID="HZ0-72-G8P">
@@ -664,7 +722,7 @@
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WVy-s6-hXL">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="61"/>
-                                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                <color key="backgroundColor" red="0.66678210085853762" green="0.85491910113077507" blue="0.99783438440000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <segments>
                                                     <segment title="Grocery"/>
                                                     <segment title="Kosher Wine"/>
@@ -848,7 +906,7 @@
             <objects>
                 <viewController storyboardIdentifier="ProductOrderVC" id="n8t-Cg-8oW" customClass="ProductOrderVC" customModule="Kosher_in_Korea" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aJW-dA-OhI">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="623.33333333333337"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Dgy-bV-0FC">
@@ -1037,8 +1095,8 @@
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

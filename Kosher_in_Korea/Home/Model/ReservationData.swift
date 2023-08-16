@@ -64,6 +64,6 @@ struct ReservationDto: Codable {
 }
 
 struct ApiResponse: Codable {
-    let status: String
+   // let status: String
     let data: [ReservationDto]
 }

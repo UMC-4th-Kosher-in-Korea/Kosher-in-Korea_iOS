@@ -10,6 +10,8 @@ import UIKit
 class OrderVC: UIViewController {
     var selectedMonthButton: UIButton?
 
+
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBAction func visitPlan(_ sender: UIButton) {
         
         selectedMonthButton?.isSelected = false
