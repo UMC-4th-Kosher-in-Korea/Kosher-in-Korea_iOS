@@ -47,7 +47,7 @@ class RestaurantVC: UIViewController,UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedRestaurant = bannerInfos[indexPath.row]
         let storyboard = UIStoryboard(name: "Reservation", bundle: nil)
-        if let reservationVC = storyboard.instantiateViewController(withIdentifier: "RestaurantDetailsVC") as? RestaurantDetailsVC {
+        if let reservationVC = storyboard.instantiateViewController(withIdentifier: "RestaurantInforVC") as? RestaurantInforVC {
             
             navigationController?.pushViewController(reservationVC, animated: true)
         }

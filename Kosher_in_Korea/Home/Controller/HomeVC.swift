@@ -9,7 +9,12 @@ import UIKit
 
 class HomeVC: UIViewController {
     
+    @IBAction func moveToCart(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Payment", bundle: nil)
+        guard let nextVC = storyboard.instantiateViewController(withIdentifier: "MyCartVC") as? MyCartVC else {return}
+        self.navigationController?.pushViewController(nextVC, animated: true)
     
+    }
     @IBOutlet weak var selectProductView: UIView!
     @IBOutlet weak var restaurantView: UIView!
     @IBAction func segment(_ sender: UISegmentedControl) {

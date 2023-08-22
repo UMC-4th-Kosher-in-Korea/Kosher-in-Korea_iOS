@@ -8,17 +8,18 @@
 import UIKit
 
 class OrderVC: UIViewController {
+    
     var selectedMonthButton: UIButton?
-
-
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBAction func visitPlan(_ sender: UIButton) {
-        
+    
+    @IBAction func monthButton(_ sender: UIButton) {
         selectedMonthButton?.isSelected = false
-        sender.isSelected = true
-        selectedMonthButton = sender
+                sender.isSelected = true
+                selectedMonthButton = sender
         
     }
+
+    @IBOutlet weak var collectionView: UICollectionView!
+   
     @IBOutlet weak var containerVW: UIView!
     @IBAction func segment(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {

@@ -7,17 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0C8B6268-14B9-420E-BA63-E397736472BE"
+            uuid = "71A02763-8A27-41EE-9751-9D5F8E879212"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Kosher_in_Korea/Home/Model/ProductData.swift"
+            filePath = "Kosher_in_Korea/Utils/StackNavigation.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "10"
-            endingLineNumber = "10"
-            landmarkName = "ProductInfo"
-            landmarkType = "14">
+            startingLineNumber = "9"
+            endingLineNumber = "9"
+            landmarkName = "goSetup(_:)"
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

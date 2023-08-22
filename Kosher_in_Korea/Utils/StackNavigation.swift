@@ -6,26 +6,41 @@
 //
 
 import UIKit
-
+func goSetup(_ controller : UIViewController){
+    let storyboard = UIStoryboard(name: "Setup", bundle: nil)
+    guard let setupVC = storyboard.instantiateViewController(withIdentifier: "SetupVC") as? SetupVC else { return }
+   
+    controller.navigationController?.pushViewController(setupVC, animated: false)
+}
 func goHome(controller : UIViewController) {
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(identifier: "HomeVC") as? HomeVC else { return }
-        controller.navigationController?.pushViewController(vc, animated: true)
-    if let tabBarController = controller.tabBarController {
-            tabBarController.selectedIndex = 0
-        }
-    
-    
+//    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        guard let vc = storyboard.instantiateViewController(identifier: "HomeVC") as? HomeVC else { return }
+//        controller.navigationController?.pushViewController(vc, animated: true)
+//    if let tabBarController = controller.tabBarController {
+//            tabBarController.selectedIndex = 0
+//        }
+//
+//
+    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+       let sceneDelegate = windowScene.delegate as? SceneDelegate {
+        sceneDelegate.setRootToTabBarController()
+    }
     
 }
 func goPayment(controller : UIViewController) {
     let storyboard = UIStoryboard(name: "Payment", bundle: nil)
     if let paymentVC = storyboard.instantiateViewController(withIdentifier: "PaymentVC") as? PaymentVC {
-        paymentVC.productDelegate = controller as? ProductDelegate
+        //paymentVC.productDelegate = controller as? ProductDelegate
         controller.navigationController?.pushViewController(paymentVC, animated: true)
     } else { }
 }
-
+func goCart(controller : UIViewController) {
+    let storyboard = UIStoryboard(name: "Payment", bundle: nil)
+    if let paymentVC = storyboard.instantiateViewController(withIdentifier: "MyCartVC") as? MyCartVC {
+        //paymentVC.productDelegate = controller as? ProductDelegate
+        controller.navigationController?.pushViewController(paymentVC, animated: true)
+    } else { }
+}
 
 func goReservation(controller : UIViewController) {
 

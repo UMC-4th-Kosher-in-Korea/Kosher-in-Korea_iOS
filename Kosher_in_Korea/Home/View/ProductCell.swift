@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var productImageView: UIImageView!
@@ -17,9 +17,9 @@ class ProductCollectionViewCell: UICollectionViewCell {
     }
     func configure (_ info : ProductInfo)
     {
-        nameLabel.text = info.name
-        priceLabel.text = "\(info.price) 원"
-        productImageView.image = UIImage(named: info.imageName)
+        nameLabel.text = info.ingredientName
+        priceLabel.text = "\(formatPrice(info.price))"
+        productImageView.sd_setImage(with: URL(string: info.ingredientImage), placeholderImage: UIImage(named: "placeholder"))
         
     }
 }

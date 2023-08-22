@@ -6,43 +6,66 @@
 //
 
 import UIKit
+import Alamofire
 
-struct ProductInfo: Hashable {
-    let name: String
+struct APIResponse<T: Decodable>: Decodable {
+    let header: APIHeader
+    let body: T
+}
+
+struct APIHeader: Decodable {
+    let resultCode: Int
+    let codeName: String
+}
+
+struct APIBodyForProducts: Decodable {
+    let data: APIDataForProducts
+    let msg: String
+}
+
+struct APIDataForProducts: Decodable {
+    let content: [ProductInfo]
+}
+
+struct ProductInfo: Decodable,Hashable {
+    let ingredientId: Int
+    let ingredientName: String
+    let ingredientImage: String
     let price: Int
-    let imageName: String
+    let categoryName: String
 }
-extension ProductInfo {
-    static let judaicaList = [
-    
-        ProductInfo(name: "Postcards", price: 75000, imageName: "judaica01"),
-        ProductInfo(name: "2", price: 32500, imageName: "judaica02"),
-        ProductInfo(name: "3", price: 25500, imageName: "judaica03"),
-        ProductInfo(name: "4", price: 25700, imageName: "judaica04"),
-        ProductInfo(name: "5", price: 25300, imageName: "judaica05"),
-        ProductInfo(name: "6", price: 12500, imageName: "judaica06"),
-        ProductInfo(name: "7", price: 200, imageName: "judaica07"),
-    ]
-    
-    static let groceryList = [
-    
-        ProductInfo(name: "1", price: 75000, imageName: "name02"),
-        ProductInfo(name: "2", price: 27500, imageName: "name03"),
-        ProductInfo(name: "3", price: 52500, imageName: "name04"),
-        ProductInfo(name: "4", price: 22500, imageName: "name05"),
-        ProductInfo(name: "5", price: 92500, imageName: "name06"),
-        ProductInfo(name: "6", price: 22500, imageName: "name07"),
-        ProductInfo(name: "7", price: 12500, imageName: "name08"),
-    ]
-    static let wineList = [
-    
-        ProductInfo(name: "1", price: 75000, imageName: "Wine01"),
-        ProductInfo(name: "2", price: 2500, imageName: "Wine02"),
-        ProductInfo(name: "3", price: 2500, imageName: "Wine03"),
-        ProductInfo(name: "4", price: 2500, imageName: "Wine04"),
-        ProductInfo(name: "5", price: 2500, imageName: "Wine05"),
-        ProductInfo(name: "6", price: 2500, imageName: "Wine06"),
-        ProductInfo(name: "7", price: 2500, imageName: "Wine07"),
-    ]
+struct APIBodyForProductDetails: Decodable {
+    let data: ProductInfo
+    let msg: String
 }
 
+extension APIService {
+    static func fetchProducts(from category: Int, page : Int, size: Int, completion: @escaping (Result<[ProductInfo], Error>) -> Void) {
+        let url = "\(baseURL)/category/\(category)/ingredient"
+        
+        var parameters: Parameters = ["page": page, "size": size]
+        
+        AF.request(url, method: .get,parameters: parameters).responseDecodable(of: APIResponse<APIBodyForProducts>.self) { response in
+            switch response.result {
+            case .success(let apiResponse):
+                completion(.success(apiResponse.body.data.content))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+
+    static func fetchProductDetails(for ingredientId: Int, completion: @escaping (Result<ProductInfo, Error>) -> Void) {
+        let url = "\(baseURL)/ingredient/\(ingredientId)"
+
+        AF.request(url).responseDecodable(of: APIResponse<APIBodyForProductDetails>.self) { response in
+            switch response.result {
+            case .success(let apiResponse):
+                let productInfo = apiResponse.body.data
+                completion(.success(productInfo))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+}

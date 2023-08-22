@@ -8,11 +8,12 @@
 import UIKit
 import GoogleSignIn
 import FacebookCore
+import iamport_ios
 
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
 
     func application(
       _ app: UIApplication,
@@ -34,7 +35,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       }
 
       // Handle other custom URL types.
-
+        if let scheme = url.scheme, scheme.localizedCaseInsensitiveCompare("myapp") == .orderedSame {
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               let sceneDelegate = windowScene.delegate as? SceneDelegate {
+                sceneDelegate.setRootToTabBarController()
+                
+            }
+            return true
+        }
+        Iamport.shared.receivedURL(url)
+             return true
       // If not handled by this app, return false.
       return false
     
