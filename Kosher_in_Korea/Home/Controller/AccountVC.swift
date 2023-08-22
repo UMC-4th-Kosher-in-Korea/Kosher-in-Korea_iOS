@@ -48,18 +48,88 @@ class AccountVC : UIViewController {
     
     private var AccountEditButton : UIButton = {
         var button = UIButton()
-        button.setTitle("Edit", for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
+        button.setTitle("Profile Edit", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        button.setTitleColor(.blue, for: .normal)
         button.setTitleColor(.gray, for: .highlighted)
+        button.layer.cornerRadius = 8
+        button.layer.borderWidth = 1
+        button.backgroundColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
     }()
     
+    private var Location : UILabel = {
+        var label = UILabel()
+        label.text = "Location"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
+    private var Shipping : UILabel = {
+        var label = UILabel()
+        label.text = "Shipping"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
+    private var Payment : UILabel = {
+        var label = UILabel()
+        label.text = "Payment"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
+    private var Notification : UILabel = {
+        var label = UILabel()
+        label.text = "Notification"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
+    
+    private var Language : UILabel = {
+        var label = UILabel()
+        label.text = "Language"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
+    
+    
+    private var FAQs : UILabel = {
+        var label = UILabel()
+        label.text = "Account"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    private var SendFeedback : UILabel = {
+        var label = UILabel()
+        label.text = "Account"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
+    private var Logout : UILabel = {
+        var label = UILabel()
+        label.text = "Account"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
     private var LocationButton : UIButton = {
         var button = UIButton()
         button.setTitleColor(.black, for: .normal)
-        button.setTitle("Location                                             >", for: .normal)
+        button.setTitle(">", for: .normal)
         button.setTitleColor(.gray, for: .highlighted)
         button.translatesAutoresizingMaskIntoConstraints = false
         
@@ -69,7 +139,7 @@ class AccountVC : UIViewController {
     private var ShippingButton : UIButton = {
         var button = UIButton()
         button.setTitleColor(.black, for: .normal)
-        button.setTitle("Shipping                                             >", for: .normal)
+        button.setTitle(">", for: .normal)
         button.setTitleColor(.gray, for: .highlighted)
         button.translatesAutoresizingMaskIntoConstraints = false
         
@@ -79,7 +149,7 @@ class AccountVC : UIViewController {
     private var PaymentButton : UIButton = {
         var button = UIButton()
         button.setTitleColor(.black, for: .normal)
-        button.setTitle("Payment                                             >", for: .normal)
+        button.setTitle(">", for: .normal)
         button.setTitleColor(.gray, for: .highlighted)
         button.translatesAutoresizingMaskIntoConstraints = false
         
@@ -89,7 +159,7 @@ class AccountVC : UIViewController {
     private var NotificationsButton : UIButton = {
         var button = UIButton()
         button.setTitleColor(.black, for: .normal)
-        button.setTitle("Notifications                                      >", for: .normal)
+        button.setTitle(">", for: .normal)
         button.setTitleColor(.gray, for: .highlighted)
         button.translatesAutoresizingMaskIntoConstraints = false
         
@@ -99,7 +169,7 @@ class AccountVC : UIViewController {
     private var LanguageButton : UIButton = {
         var button = UIButton()
         button.setTitleColor(.black, for: .normal)
-        button.setTitle("Language                                           >", for: .normal)
+        button.setTitle(">", for: .normal)
         button.setTitleColor(.gray, for: .highlighted)
         button.translatesAutoresizingMaskIntoConstraints = false
         
@@ -109,7 +179,7 @@ class AccountVC : UIViewController {
     private var FAQsButton : UIButton = {
         var button = UIButton()
         button.setTitleColor(.black, for: .normal)
-        button.setTitle("FAQs                                                   >", for: .normal)
+        button.setTitle(">", for: .normal)
         button.setTitleColor(.gray, for: .highlighted)
         button.translatesAutoresizingMaskIntoConstraints = false
         
@@ -119,7 +189,7 @@ class AccountVC : UIViewController {
     private var SendFeedbackButton : UIButton = {
         var button = UIButton()
         button.setTitleColor(.black, for: .normal)
-        button.setTitle("Send feedback                                  >", for: .normal)
+        button.setTitle(">", for: .normal)
         button.setTitleColor(.gray, for: .highlighted)
         button.translatesAutoresizingMaskIntoConstraints = false
         
@@ -129,7 +199,7 @@ class AccountVC : UIViewController {
     private var LogoutButton : UIButton = {
         var button = UIButton()
         button.setTitleColor(.black, for: .normal)
-        button.setTitle("Logout                                                >", for: .normal)
+        button.setTitle(">", for: .normal)
         button.setTitleColor(.gray, for: .highlighted)
         button.translatesAutoresizingMaskIntoConstraints = false
         
@@ -168,7 +238,6 @@ class AccountVC : UIViewController {
         ])
         
         scrollView.addSubview(AccountLabel)
-        scrollView.addSubview(AccountView)
         scrollView.addSubview(AccountEditButton)
         scrollView.addSubview(LocationButton)
         scrollView.addSubview(ShippingButton)
@@ -178,81 +247,125 @@ class AccountVC : UIViewController {
         scrollView.addSubview(FAQsButton)
         scrollView.addSubview(SendFeedbackButton)
         scrollView.addSubview(LogoutButton)
+        scrollView.addSubview(Location)
+        scrollView.addSubview(Shipping)
+        scrollView.addSubview(Payment)
+        scrollView.addSubview(Notification)
+        scrollView.addSubview(Language)
+        scrollView.addSubview(FAQs)
+        scrollView.addSubview(SendFeedback)
+        scrollView.addSubview(Logout)
         
+        NSLayoutConstraint.activate([
+            Location.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 40),
+            Location.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 150)
+        ])
+        
+        NSLayoutConstraint.activate([
+            Shipping.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 40),
+            Shipping.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 200)
+        ])
+        
+        NSLayoutConstraint.activate([
+            Language.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 40),
+            Language.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 400)
+        ])
+        
+        NSLayoutConstraint.activate([
+            FAQs.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 40),
+            FAQs.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 450)
+        ])
+        
+        NSLayoutConstraint.activate([
+            SendFeedback.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 40),
+            SendFeedback.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 500)
+        ])
         
         
         NSLayoutConstraint.activate([
-            AccountLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 20),
-            AccountLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+            Logout.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 40),
+            Logout.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 600)
+        ])
+        
+        NSLayoutConstraint.activate([
+            Notification.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 40),
+            Notification.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 350)
+        ])
+        
+        NSLayoutConstraint.activate([
+            Payment.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 40),
+            Payment.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 250)
+        ])
+        
+        NSLayoutConstraint.activate([
+            AccountLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 30),
+            AccountLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor)
+        ])
+
+        
+        
+        
+
+        
+        NSLayoutConstraint.activate([
+            AccountEditButton.widthAnchor.constraint(equalToConstant: 330),
+            AccountEditButton.heightAnchor.constraint(equalToConstant: 50),
+            AccountEditButton.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 70),
+            AccountEditButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor)
         ])
 
         
         NSLayoutConstraint.activate([
-            AccountView.widthAnchor.constraint(equalToConstant: 330),
-            AccountView.heightAnchor.constraint(equalToConstant: 70),
-            AccountView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 60),
-            AccountView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
-        ])
-        
-
-        
-        NSLayoutConstraint.activate([
-            AccountEditButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 70),
-            AccountEditButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 320)
+            LocationButton.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 143),
+            LocationButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 325)
         ])
 
         
         NSLayoutConstraint.activate([
-            LocationButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 150),
-            LocationButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 60)
-        ])
-
-        
-        NSLayoutConstraint.activate([
-            ShippingButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 200),
-            ShippingButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 60)
+            ShippingButton.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 193),
+            ShippingButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 325)
 
         ])
 
         
         NSLayoutConstraint.activate([
-            PaymentButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 250),
-            PaymentButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 60)
+            PaymentButton.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 243),
+            PaymentButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 325)
 
         ])
 
         
         NSLayoutConstraint.activate([
-            NotificationsButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 350),
-            NotificationsButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 60)
+            NotificationsButton.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 343),
+            NotificationsButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 325)
 
         ])
 
         
         NSLayoutConstraint.activate([
-            LanguageButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 400),
-            LanguageButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 60)
+            LanguageButton.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 393),
+            LanguageButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 325)
 
         ])
 
         
         NSLayoutConstraint.activate([
-            FAQsButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 450),
-            FAQsButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 60)
+            FAQsButton.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 443),
+            FAQsButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 325)
 
         ])
 
         
         NSLayoutConstraint.activate([
-            SendFeedbackButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 500),
-            SendFeedbackButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 60)
+            SendFeedbackButton.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 493),
+            SendFeedbackButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 325)
 
         ])
 
         
         NSLayoutConstraint.activate([
-            LogoutButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 600),
-            LogoutButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 60)
+            LogoutButton.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 593),
+            LogoutButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 325)
         ])
 
         
