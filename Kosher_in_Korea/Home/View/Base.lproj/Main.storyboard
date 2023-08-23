@@ -880,11 +880,11 @@ The menu features Vegan Shakshuka and HummUS.</string>
             </objects>
             <point key="canvasLocation" x="2999" y="-912"/>
         </scene>
-        <!--홈-->
+        <!--Home-->
         <scene sceneID="Oqb-0y-RWa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="cis-3P-59D" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="홈" image="homekit" catalog="system" id="BA3-8c-b9y" userLabel="홈"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="BA3-8c-b9y" userLabel="홈"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kjp-Dn-Hj4">
                         <autoresizingMask key="autoresizingMask"/>

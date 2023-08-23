@@ -112,7 +112,7 @@ class AccountVC : UIViewController {
     }()
     private var SendFeedback : UILabel = {
         var label = UILabel()
-        label.text = "Dominate"
+        label.text = "Donate"
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
