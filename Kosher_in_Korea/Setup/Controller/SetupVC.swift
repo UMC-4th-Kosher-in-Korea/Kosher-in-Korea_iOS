@@ -92,12 +92,37 @@ class SetupVC: UIViewController, UIImagePickerControllerDelegate & UINavigationC
            let profileImageData = profileImage.jpegData(compressionQuality: 0.9) {
 
             let dto = CreateUserDto(userName: userName, userEmail: userEmail, userPhone: userPhone, profileImage: profileImageData, userAddress: userAddress)
-
+            
             // 여기서 dto를 전달
             APIService.createUser(dto) { result in
                 switch result {
                 case .success:
                     print("User created successfully!")
+                    APIService.login(userEmail: userEmail) { result in
+                        switch result {
+                        case .success(let responseDict):
+                            if let userData = responseDict["data"] as? [String: Any],
+                               let userId = userData["id"] as? Int {
+                                // 로그인 성공 시 유저 정보를 저장
+                                var loginData = LoginData()
+                                loginData.userId = userId // id만 저장
+                                UserDataManager.shared.userID = userId
+                                //self.userID = userId
+                                //print("Login Successful. UserId: \(self.userID ?? -1)")
+                                // 로그인에 성공했을 때의 동작
+//                                if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+//                                   let sceneDelegate = windowScene.delegate as? SceneDelegate {
+//                                    sceneDelegate.setRootToTabBarController()
+                                    
+                                //}
+                            } else {
+                                print("Failed to extract user id from response.")
+                            }
+                        case .failure(let error):
+                            goSetup(self)
+                        }
+                    }
+
                     if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                        let sceneDelegate = windowScene.delegate as? SceneDelegate {
                         sceneDelegate.setRootToTabBarController()
@@ -107,6 +132,7 @@ class SetupVC: UIViewController, UIImagePickerControllerDelegate & UINavigationC
                     print("Error creating user: \(error)")
                 }
             }
+            
         }
     }
     
