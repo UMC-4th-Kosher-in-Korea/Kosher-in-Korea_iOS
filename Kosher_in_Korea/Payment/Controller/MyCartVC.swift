@@ -54,6 +54,7 @@ class MyCartVC: UIViewController, UICollectionViewDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         deleteSelectedItems()
+        updateTotalPrice()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -135,10 +136,10 @@ extension MyCartVC: MyCartCellDelegate {
         if let indexPath = collectionView.indexPath(for: cell) {
             let cartIngredient = cartItems[indexPath.item]
             selectedItemsToDelete.append(cartIngredient.cartIngredientId) // ID 추가
-            
             cartItems.remove(at: indexPath.item)
             updateDataSource() // 화면 업데이트
             updateTotalPrice()
+        
         }
     }
     func deleteSelectedItems() {
@@ -183,10 +184,9 @@ extension MyCartVC: MyCartCellDelegate {
     
     
     func updateTotalPrice() {
-        
         let total = cartItems.reduce(0) { $0 + ($1.price * $1.quantity) }
         totalPrice.text = "Total: \(formatPrice(total))"
-        
-            }
+     
+        }
     
 }

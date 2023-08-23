@@ -410,6 +410,40 @@
             </objects>
             <point key="canvasLocation" x="1808" y="824"/>
         </scene>
+        <!--DominataionVC-->
+        <scene sceneID="QSC-5p-4bu">
+            <objects>
+                <viewController storyboardIdentifier="DominataionVC" id="qtD-gu-xsa" customClass="DominataionVC" customModule="Kosher_in_Korea" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ljo-7e-Wtq">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vB-s9-hmc">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jq3-up-TbO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9vB-s9-hmc" firstAttribute="top" secondItem="jq3-up-TbO" secondAttribute="top" id="0de-Fe-9vf"/>
+                            <constraint firstItem="jq3-up-TbO" firstAttribute="bottom" secondItem="9vB-s9-hmc" secondAttribute="bottom" id="o9R-U5-bMH"/>
+                            <constraint firstItem="9vB-s9-hmc" firstAttribute="leading" secondItem="jq3-up-TbO" secondAttribute="leading" id="vQT-nk-Ixk"/>
+                            <constraint firstItem="jq3-up-TbO" firstAttribute="trailing" secondItem="9vB-s9-hmc" secondAttribute="trailing" id="vdu-YD-PH6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="9vB-s9-hmc" id="Qxu-Mg-AvL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YYW-6Z-20A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2563" y="843"/>
+        </scene>
         <!--RestaurantVC-->
         <scene sceneID="HZ0-72-G8P">
             <objects>

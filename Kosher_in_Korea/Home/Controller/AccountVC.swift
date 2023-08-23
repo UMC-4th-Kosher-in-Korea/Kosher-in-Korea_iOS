@@ -112,7 +112,7 @@ class AccountVC : UIViewController {
     }()
     private var SendFeedback : UILabel = {
         var label = UILabel()
-        label.text = "Account"
+        label.text = "Dominate"
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
@@ -120,7 +120,7 @@ class AccountVC : UIViewController {
     
     private var Logout : UILabel = {
         var label = UILabel()
-        label.text = "Account"
+        label.text = "Logout"
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
@@ -212,6 +212,12 @@ class AccountVC : UIViewController {
                 sceneDelegate.setRootToLoginController()
             }
     }
+    @objc private func dominateBtn(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+     guard let nextVC = storyboard.instantiateViewController(withIdentifier: "DominataionVC") as? DominataionVC
+     else {return}
+     self.navigationController?.pushViewController(nextVC, animated: false)
+    }
     @objc private func editButtonTapped() {
            let storyboard = UIStoryboard(name: "Setup", bundle: nil)
         guard let nextVC = storyboard.instantiateViewController(withIdentifier: "SetupVC") as? SetupVC
@@ -223,7 +229,9 @@ class AccountVC : UIViewController {
         
         LogoutButton.addTarget(self, action: #selector(logoutButton), for: .touchUpInside)
         AccountEditButton.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
-
+        SendFeedbackButton.addTarget(self, action: #selector(dominateBtn), for: .touchUpInside)
+        
+        
         view.backgroundColor = .white
         
         view.addSubview(scrollView)

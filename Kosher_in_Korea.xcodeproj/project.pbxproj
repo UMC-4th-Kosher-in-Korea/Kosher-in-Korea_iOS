@@ -54,6 +54,7 @@
 		FF6F08A92A94F4670021DBCD /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F08A82A94F4670021DBCD /* ReviewTableViewCell.swift */; };
 		FF6F08AB2A9503E20021DBCD /* PaymentResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F08AA2A9503E20021DBCD /* PaymentResultVC.swift */; };
 		FF6F08AD2A9515160021DBCD /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F08AC2A9515160021DBCD /* AccountVC.swift */; };
+		FF6F08AF2A95AD360021DBCD /* DominataionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F08AE2A95AD360021DBCD /* DominataionVC.swift */; };
 		FF7845792A666A9300E2A663 /* RestaurantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7845782A666A9300E2A663 /* RestaurantData.swift */; };
 		FF78457B2A666B9900E2A663 /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF78457A2A666B9900E2A663 /* RestaurantCell.swift */; };
 		FF8408BD2A86513B00216CDE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF8408BC2A86513B00216CDE /* Login.storyboard */; };
@@ -114,6 +115,7 @@
 		FF6F08A82A94F4670021DBCD /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		FF6F08AA2A9503E20021DBCD /* PaymentResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentResultVC.swift; sourceTree = "<group>"; };
 		FF6F08AC2A9515160021DBCD /* AccountVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
+		FF6F08AE2A95AD360021DBCD /* DominataionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DominataionVC.swift; sourceTree = "<group>"; };
 		FF7845782A666A9300E2A663 /* RestaurantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantData.swift; sourceTree = "<group>"; };
 		FF78457A2A666B9900E2A663 /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		FF8408BC2A86513B00216CDE /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				FF6F08952A9460640021DBCD /* MenuVC.swift */,
 				FF6F08AA2A9503E20021DBCD /* PaymentResultVC.swift */,
 				FF6F08992A9460640021DBCD /* ReservationVC.swift */,
+				FF6F08AE2A95AD360021DBCD /* DominataionVC.swift */,
 				FF6F08982A9460640021DBCD /* RestaurantDetailsVC.swift */,
 				FF390B2C2A8141050011D973 /* MyCartVC.swift */,
 			);
@@ -528,6 +531,7 @@
 				FF6F089A2A9460640021DBCD /* MenuVC.swift in Sources */,
 				FF6F089E2A9460640021DBCD /* ReservationVC.swift in Sources */,
 				FF8408BF2A86515F00216CDE /* LoginVC.swift in Sources */,
+				FF6F08AF2A95AD360021DBCD /* DominataionVC.swift in Sources */,
 				FF6F08A02A9478070021DBCD /* RestaurantInforVC.swift in Sources */,
 				FF6F089B2A9460640021DBCD /* MenuTableViewCell.swift in Sources */,
 				FF5B84F92A756D150023818F /* ProductCell.swift in Sources */,
